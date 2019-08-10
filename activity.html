@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity</title>
+</head>
+<body>
+<div id="app">
+  <div v-class="langBg">
+    <div class="draw">
+      <div class="lucky"><span>{{lang.numberLucky}} </span> <span class="num">{{extractNumber}}</span></div>
+    </div>
+    <div id="circle">
+      <div class="bg"></div>
+      <div class="point" v-on:click="extractHandler"></div>
+      <div class="turntable" v-class="poolName"></div>
+    </div>
+    <div class="operation">
+      <div class="btn">
+        <div class="prizes">
+          <button id="prizesBtn">{{lang.Prizes}}</button>
+        </div>
+        <div class="rules">
+          <button id="rulesBtn">{{lang.Rules}}</button>
+        </div>
+      </div>
+      <div class="winners">
+        <h4 class="v-hairline--bottom">{{lang.winners}}</h4>
+        <ul class="winnersList" id="winnersList">
+        </ul>
+      </div>
+    </div>
+    <div class="prizesDetail">
+      <div class="prizeBg" v-class="poolName"></div>
+      <div class="close prizeClose"><i></i></div>
+    </div>
+    <div class="rulesDetail">
+      <div class="rulesBg" v-class="poolName">
+      </div>
+      <div class="ruleClose close"><i></i></div>
+    </div>
+    <div class="result"></div>
+    <div id="toast"></div>
+  </div>
+</div>
+</body>
+</html>

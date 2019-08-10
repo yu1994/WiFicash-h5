@@ -1,0 +1,323 @@
+@import "../../../../src/common/styl/reset.styl"
+@import "../../../../src/common/styl/mixin.styl"
+@import "../../../../src/common/styl/hairline.styl"
+@font-face {
+  font-family: "Righteous-Regular";
+  src: url("../font/Righteous-Regular.ttf");
+}
+$titleTop = 264px
+$titleTopBase = (264+152)px
+html,body
+  width 100%
+  height 100%
+#app
+  position relative
+  width 100%
+  height 100%
+  $bg-image('../img/bg')
+  background-size 100% 100%
+  overflow-x hidden
+  font-size 32px
+  .startView
+    position relative
+    z-index 10
+    width 100%
+    height 100%
+    .startView-rule,.startView-chance
+      position absolute
+      top 108px
+      right 0
+      width 150px
+      height 60px
+      line-height 60px
+      border-radius 60px 0 0 60px
+      background:rgba(59,19,134,1);
+      text-align center
+      p
+        font-size:34px;
+        font-family:"Righteous-Regular";
+        font-weight:400;
+        color:rgba(255,101,239,1);
+    .startView-chance
+      left 0
+      border-radius 0 60px 60px 0
+    .startView-title
+      position absolute
+      width 660px
+      height 152px
+      top $titleTop
+      left 50%
+      margin-left -(@width/2)px
+      $bg-image('../img/title')
+      background-size 100% 100%
+      &.hi
+        $bg-image('../img/title_hi')
+    .startView-num
+      position absolute
+      width 100%
+      top $titleTopBase+175
+      text-align center
+      color:rgba(255,255,255,1);
+      p,span
+        font-weight:400;
+        font-family:"Righteous-Regular";
+        font-size:30px;
+        text-shadow:0 2px 5px rgba(137,10,10,0.65);
+      .num
+        color #FFDE00
+    .startView-btn
+      position absolute
+      width 440px
+      top $titleTopBase+281px
+      left 50%
+      margin-left -(@width/2)px
+      button
+        width 100%
+        height 97px
+        border none
+        outline none
+        border-radius 10px
+        background-size 100% 100%
+        font-family:"Righteous-Regular";
+      .start
+        $bg-image('../img/icon_start')
+        font-size:40px;
+        font-weight:400;
+        color:rgba(255,241,119,1);
+        text-shadow:0 2px 5px rgba(26,173,30,1);
+      .increase
+        margin-top 68px
+        font-size:33px;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        text-shadow:0 2px 5px rgba(137,10,10,0.65);
+        $bg-image('../img/icon_increase')
+  .chanceView
+    .chanceView-box
+      position relative
+      margin 153px auto 153px
+      width 621px
+      height 1043px
+      $bg-image('../img/icon_chance')
+      background-size 100% 100%
+      &.hi
+        $bg-image('../img/icon_chance_hi')
+      /*left 50%
+      top 200px
+      transform translateX(-50%)*/
+  .rulesDetailView
+    .rulesDetailView-box
+      position absolute
+      width 620px
+      height 621px
+      left 50%
+      top 234px
+      margin-left -(@width/2)px
+      $bg-image('../img/rule')
+      background-size 100% 100%
+      &.hi
+        $bg-image('../img/rule_hi')
+  .increaseNumber
+    .increaseNumber-box
+      position absolute
+      width 520px
+      height 613px
+      top 225px
+      left 50%
+      padding 239px 55px 0
+      box-sizing border-box
+      margin-left -(@width/2)px
+      $bg-image('../img/icon_pop_increase')
+      background-size 100% 100%
+      .title
+        font-size:26px;
+        font-family:Helvetica;
+        font-weight:400;
+        color:rgba(145,64,246,1);
+        line-height:32px;
+      .chooseCoupon
+        display flex
+        width 100%
+        height 60px
+        margin 29px 0 25px 0
+        padding 0 26px 0 19px
+        box-sizing border-box
+        justify-content space-between
+        align-items center
+        border-radius:4px
+        .label
+          font-size:24px;
+          font-family:Helvetica;
+          font-weight:400;
+          color:rgba(109,110,104,1);
+        .rupees
+          display flex
+          align-items center
+          color:rgba(153,153,153,1)
+          .num
+            font-size:32px;
+            font-family:Helvetica-Bold;
+            font-weight:bold;
+            color:rgba(153,153,153,1);
+      .sign
+        font-size:22px;
+        font-family:Helvetica;
+        font-weight:400;
+        color:rgba(153,153,153,1);
+        line-height:32px;
+      .confirm
+        margin-top 48px
+        text-align center
+        button
+          width:250px;
+          height:58px;
+          border none
+          outline none
+          background:linear-gradient(0deg,rgba(159,105,248,1),rgba(130,18,244,1));
+          border-radius:29px;
+          font-size:36px;
+          font-family:Helvetica;
+          font-weight:400;
+          color:rgba(255,255,255,1);
+      
+  .gameOverView
+    .gameOverView-box
+      position absolute
+      width 521px
+      height 445px
+      left 50%
+      top 225px
+      transform translateX(-50%)
+      padding 254px 0 0 0
+      box-sizing border-box
+      background-size 100% 100%
+      text-align center
+      $bg-image("../img/icon_pop_nocoupon")
+      .title
+        font-size:41px;
+        font-family:Helvetica-Bold;
+        font-weight:bold;
+        color:#9140F6;
+        line-height:40px;
+      .sign
+        margin 40px auto 68px
+        font-size:22px;
+        font-family:Helvetica;
+        font-weight:400;
+        color:rgba(153,153,153,1);
+      button
+        width:250px;
+        height:58px;
+        outline none
+        border none
+        margin-top 40px
+        background:linear-gradient(0deg,rgba(159,105,248,1),rgba(130,18,244,1));
+        border-radius:29px;
+        font-size:36px;
+        font-family:Helvetica;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+  .successfulView
+    .successfulView-box
+      position absolute
+      width 521px
+      height 585px
+      left 50%
+      top 225px
+      transform translateX(-50%)
+      padding 226px 30px 0
+      box-sizing border-box
+      $bg-image('../img/icon_pop_successful')
+      background-size 100% 100%
+      text-align center
+      .title
+        font-size:31px;
+        font-family:Helvetica-Bold;
+        font-weight:bold;
+        color:rgba(145,64,246,1);
+        line-height 40px
+      .sign
+        margin 38px auto 60px
+        font-size:22px;
+        font-family:Helvetica;
+        font-weight:400;
+        color:rgba(153,153,153,1);
+      .coupons
+        display flex
+        align-items center
+        justify-content center
+        p
+          font-size:26px;
+          font-family:Helvetica;
+          font-weight:400;
+          line-height 40px
+          color:rgba(255,151,29,1);
+      .btn
+        margin-top 35px
+        button
+          border none
+          width:250px;
+          height:58px;
+          background:linear-gradient(0deg,rgba(159,105,248,1),rgba(130,18,244,1));
+          border-radius:29px;
+          font-size:36px;
+          font-family:Helvetica;
+          font-weight:400;
+          color:rgba(255,255,255,1);
+  .sorryView
+    .sorryView-box
+      position absolute
+      width 521px
+      height 445px
+      left 50%
+      top 225px
+      transform translateX(-50%)
+      padding 254px 0 0 0
+      box-sizing border-box
+      background-size 100% 100%
+      text-align center
+      $bg-image("../img/icon_pop_nocoupon")
+      .title
+        font-size:41px;
+        font-family:Helvetica-Bold;
+        font-weight:bold;
+        color:rgba(145,64,246,1);
+        line-height:40px;
+      .sign
+        margin-top 35px
+        font-size:22px;
+        font-family:Helvetica;
+        font-weight:400;
+        color:rgba(153,153,153,1);
+  .successfulView,.rulesDetailView,.increaseNumber,.gameOverView,.sorryView,.chanceView
+    position fixed
+    width 100%
+    height 100%
+    left 0
+    top 0
+    z-index 99
+    background-color rgba(0,0,0,.7)
+  .chanceView
+    overflow-y scroll
+  .close
+    position absolute
+    left 50%
+    bottom -120px
+    padding 20px
+    transform translateX(-50%)
+    i
+      display block
+      width 42px
+      height 42px
+      $bg-image('../img/icon_close')
+      background-size 100% 100%
+  .game
+    position fixed
+    width 100%
+    height 100%
+    left 0
+    top 0
+  .dialog
+    display none
+  #spinner
+    background-color rgba(0,0,0,0.3)

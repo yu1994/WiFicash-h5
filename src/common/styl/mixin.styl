@@ -1,0 +1,41 @@
+$bg-image($url)
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
+$bg-size(x,y)
+  -webkit-background-size: x,y
+  background-size: x,y
+// 不换行
+/*
+no-wrap()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+// 扩展点击区域
+extend-click()
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: -10px
+    left: -10px
+    right: -10px
+    bottom: -10px
+$slider()
+  !*  Webkit内核浏览器：Safari and Chrome*!
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .5s;
+  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  !*  Mozilla内核浏览器：firefox3.5+*!
+  -moz-transition-property: all;
+  -moz-transition-duration: .5s;
+  -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  !*  Opera*!
+  -o-transition-property: all;
+  -o-transition-duration: .5s;
+  -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  !*  IE9*!
+  -ms-transition-property: all;
+  -ms-transition-duration: .5s;
+  -ms-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+*/

@@ -1,0 +1,80 @@
+@import "../../../common/styl/mixin.styl"
+.prizeDialogBg
+  position relative
+  width 700px
+  height 840px
+  margin 120px auto 0
+  $bg-image("../img/icon_pop_win")
+  background-repeat no-repeat
+  background-size 100% 100%
+  .info
+    position absolute
+    width 100%
+    bottom 60px
+    text-align center
+    .hint
+      font-size:41px;
+      font-weight:bold;
+      line-height 60px
+      color:rgba(253,242,58,1);
+    .promotion
+      position relative
+      width 438px
+      height 189px
+      margin 60px auto
+      $bg-image("../img/icon_pop_coupon")
+      background-size 100% 100%
+      background-repeat no-repeat
+      font-size:109px;
+      font-weight:normal;
+      color:rgba(250,51,40,1);
+      line-height:79px;
+      .coupon
+        position absolute
+        height @height
+        line-height @height
+        left 44px
+    .promotion_hi
+      $bg-image("../img/icon_pop_coupon_hi")
+    .go
+      width:373px;
+      height:68px;
+      border none
+      background:rgba(255,255,0,1);
+      font-size:32px;
+      font-weight:400;
+      color:rgba(230,0,18,1);
+      line-height:36px;
+      border-radius (@height/2)px
+.thank
+  position relative
+  width 521px
+  height 613px
+  margin 120px auto 0
+  $bg-image("../img/icon_pop_thanks")
+  background-repeat no-repeat
+  background-size 100% 100%
+  .info
+    position absolute
+    left 0
+    bottom 38px
+    width 100%
+    text-align center
+    .hint
+      font-size:40px;
+      font-weight:400;
+      color:rgba(86,36,23,1);
+      line-height:70px;
+      margin-bottom 40px
+    button
+      width:279px;
+      height:65px;
+      border none
+      background:linear-gradient(90deg,rgba(239,85,39,1),rgba(255,63,56,1));
+      border-radius:33px;
+      font-size:40px;
+      font-weight:bold;
+      color:rgba(255,255,255,1);
+      line-height:70px;
+
+

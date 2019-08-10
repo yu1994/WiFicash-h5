@@ -1,0 +1,163 @@
+@import "../../common/styl/mixin.styl"
+#app
+  padding-bottom 100px
+  background: linear-gradient(left,#f46631, #fe4e44)
+  background -webkit-linear-gradient(left,#f46631, #fe4e44)
+  overflow-x hidden
+  .draw
+    position relative
+    width 100%
+    height 512px
+    $bg-image("./img/icon_head")
+    background-repeat no-repeat
+    background-size 100% 100%
+    .lucky
+      position absolute
+      width 486px
+      height 50px
+      line-height @height
+      left 50%
+      margin-left -(@width/2)px
+      bottom 130px
+      border-radius 50px
+      background-color #FFBF27
+      text-align center
+      font-size:28px;
+      color:rgba(255,255,255,1);
+      .num
+        color #DC2121
+  #circle
+    position: relative;
+    width 100%
+    height 531px
+    .bg
+      position relative
+      width 531px
+      height @height
+      margin 0 auto
+      $bg-image("./img/icon_big_border")
+      background-size 100% 100%
+      background-repeat no-repeat
+    .point
+      position: absolute;
+      z-index: 10;
+      width 154px
+      height 193px
+      left 50%
+      top 50%
+      margin-left -(@width/2)px
+      margin-top -(@height/2)px
+      $bg-image("./img/icon_button")
+      background-size 100% 100%
+      background-repeat no-repeat
+    .turntable
+      position: absolute;
+      width 463px
+      height 463px
+      left 50%
+      top 50%
+      margin-left -(@width/2)px
+      margin-top -(@height/2)px
+      $bg-image("./img/icon_middle")
+      background-size 100% 100%
+      background-repeat no-repeat
+      z-index: 5;
+      transition: transform 4s;
+    .turntable_two
+      $bg-image("./img/icon_middle_two")
+  .operation
+    padding 0 74px
+    .btn
+      display flex
+      align-items center
+      justify-content space-between
+      margin-top 25px
+      button
+        width:256px;
+        height:76px;
+        border none
+        border-radius 10px
+        background-color #FFDB45
+        box-shadow:0 2px 0 0 rgba(216,73,0,0.33)
+        font-size:36px;
+        font-weight:400;
+        color:rgba(202,74,45,1);
+    .winners
+      margin-top 74px
+      width 100%
+      padding 38px 65px 46px 65px
+      text-align center
+      box-sizing border-box
+      background-color #FEFDDD
+      border-radius 20px
+      color #8B271C
+      h4
+        height 92px
+        line-height @height;
+        font-size:34px;
+        font-weight:400;
+      ul
+        padding-top 32px
+        li
+          display flex
+          height 50px
+          line-height @height
+          justify-content space-between
+          font-size 24px
+
+  .prizesDetail,.rulesDetail,.result
+    display none
+    position fixed
+    width 100%
+    height 100%
+    z-index 999
+    left 0
+    top 0
+    background-color rgba(0,0,0,0.6)
+    .prizeBg
+      width 620px
+      height 650px
+      margin 250px auto 0
+      $bg-image("./img/icon_prize")
+      background-size 100% 100%
+      background-repeat no-repeat
+    .turntable_two
+      $bg-image("./img/icon_prize_two")
+    .close
+      width 42px
+      height 42px
+      padding 30px
+      margin 50px auto
+      i
+        display block
+        width 100%
+        height 100%
+        $bg-image("./img/icon_close")
+        background-size 100% 100%
+        background-repeat no-repeat
+    .rulesBg
+      width 621px
+      height 743px
+      margin 250px auto 0
+      $bg-image("./img/icon_rule")
+      background-size 100% 100%
+      background-repeat no-repeat
+#app
+  .bg_hi
+    .draw
+      $bg-image("./img/icon_head_hi")
+    #circle
+      .point
+        $bg-image("./img/icon_button_hi")
+      .turntable
+        $bg-image("./img/icon_middle_hi")
+      .turntable_two
+        $bg-image("./img/icon_middle_two_hi")  //需要變
+    .prizesDetail
+      .prizeBg
+        $bg-image("./img/icon_prize_hi")
+      .turntable_two
+        $bg-image("./img/icon_prize_two_hi")
+    .rulesDetail
+      .rulesBg
+        $bg-image("./img/icon_rule_hi")

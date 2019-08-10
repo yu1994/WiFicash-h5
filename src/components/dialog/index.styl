@@ -1,0 +1,59 @@
+@import "../../common/styl/mixin.styl"
+.dialogCover
+  position fixed
+  left 0
+  top 0
+  right 0
+  bottom 0
+  width: 100%;
+  height: 100%;
+  z-index 2000
+  background-color: rgba(0, 0, 0, 0.4)
+.notify
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  width: 640px;
+  font-size: 32px;
+  padding 109px 30px 55px 30px
+  z-index 2001
+  text-align center
+  -webkit-transition: .3s
+  transition: .3s
+  border-radius: 20px;
+  background-color: #fff
+  font-weight:400;
+  color:rgba(67,67,67,1);
+  line-height:48px;
+  -webkit-transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%,-50%,0);
+  p
+    text-align left
+  a
+    display block
+    width:440px;
+    height:70px;
+    margin 44px auto 0
+    border-radius:35px;
+    font-size:30px;
+    font-weight:bold;
+    outline none
+    border none
+    line-height @height;
+    background:rgba(251,180,28,1);
+    color:rgba(255,255,255,1);
+    text-align: center;
+  .mark
+    position absolute
+    width 386px
+    height 119px
+    left 50%
+    top -(@height/2)px
+    margin-left (-386/2)px
+    font-size:28px;
+    font-weight:400;
+    color:rgba(255,231,166,1);
+    line-height:90px;
+    $bg-image("./img/icon_success")
+    background-repeat no-repeat
+    background-size 100% 100%

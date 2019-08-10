@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0;">
+  <title>flying needle</title>
+</head>
+<body>
+<div id="app">
+  <div class="startView" v-show="showStartView">
+    <div class="startView-chance" v-on:click="toggleChanceHandler">
+      <p>{{content.mainEntry.chance}}</p>
+    </div>
+    <div class="startView-rule" v-on:click="toggleRulesHandler">
+      <p>{{content.mainEntry.rule}}</p>
+    </div>
+    <div class="startView-title" v-class="langImage">
+      <p></p>
+    </div>
+    <div class="startView-num">
+      <p><span>{{content.mainEntry.NumberGames}}</span> <span class="num">{{gameNumber}}</span></p>
+    </div>
+    <div class="startView-btn">
+      <button class="start" v-on:click="start">{{content.mainEntry.startGame}}
+      </button>
+      <button class="increase" v-on:click="toggleIncreaseHandler">
+        {{content.mainEntry.increase}}
+      </button>
+    </div>
+  </div>
+  <div class="game">
+    <div id="gameCanvas"></div>
+  </div>
+  <div class="dialog">
+    <div class="chanceView" v-show="showChance">
+        <div class="chanceView-box" v-class="langImage">
+          <div class="close" v-on:click="toggleChanceHandler">
+            <i></i>
+          </div>
+        </div>
+      </div>
+    <div class="rulesDetailView" v-show="showRules">
+      <div class="rulesDetailView-box" v-class="langImage">
+        <div class="close" v-on:click="toggleRulesHandler">
+          <i></i>
+        </div>
+      </div>
+    </div>
+    <div class="sorryView" v-show="showSorry">
+      <div class="sorryView-box">
+        <div class="title">
+          <p> {{content.sorry.title}}</p>
+        </div>
+        <div class="sign">
+          <p> {{content.sorry.sign}}</p>
+        </div>
+        <div class="close" v-on:click="leaveGame">
+          <i></i>
+        </div>
+      </div>
+    </div>
+    <div v-show="showGameOver">
+      <div class="gameOverView" >
+        <div class="gameOverView-box">
+          <p class="title">{{content.gameOver.title}}</p>
+         <!-- <p class="sign">Sorry, you failed customs clearance.</p>-->
+          <button v-on:click="playAgainHandler">{{content.gameOver.btn}}</button>
+          <div class="close" v-on:click="leaveGame">
+            <i></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="successfulView" v-show="showSuccessful">
+      <div class="successfulView-box">
+        <div class="title">
+          <p>{{content.gameSuccess.title}}
+          </p>
+        </div>
+        <p class="sign">{{content.gameSuccess.sign}}
+        </p>
+        <div class="coupons">
+          <P v-on:click="chooseCouponHandler">{{content.gameSuccess.coupon}}</P>
+        </div>
+        <div class="btn">
+          <button v-on:click="playAgainHandler">{{content.gameSuccess.btn}}</button>
+        </div>
+        <div class="close" v-on:click="leaveGame">
+          <i></i>
+        </div>
+      </div>
+    </div>
+    <div class="increaseNumber" v-show="showIncreaseNumber">
+      <div class="increaseNumber-box">
+        <p class="title">
+          {{content.increase.title}}
+        </p>
+        <div class="chooseCoupon v-hairline--surround" v-on:click="chooseCouponHandler">
+          <div class="label"><span>{{content.increase.label}}</span></div>
+          <div class="rupees">
+            <span v-show="coupon.val"  class="symbol">₹<span class="num">{{coupon.val}}</span></span>
+            <span class="iconfont icon-more"></span>
+          </div>
+        </div>
+        <div v-show="coupon.count">
+          <p class="sign" v-show="langEN">
+            The coupon can be redeemed <span>{{coupon.count}}</span> games. Confirm to redeem?
+          </p>
+          <p class="sign" v-show="langHI">
+            कूपन को <span>{{coupon.count}}</span> खेलों में रिडीम किया जा सकता है। रिडीम करने की पुष्टि करें ?
+          </p>
+        </div>
+        <div class="confirm">
+          <button v-on:click="exchangeCouponHandler">{{content.increase.confirm}}</button>
+        </div>
+        <div class="close" v-on:click="toggleIncreaseHandler">
+          <i></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="toast"></div>
+  <div id="spinner"></div>
+</div>
+</body>
+</html>
