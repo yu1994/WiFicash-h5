@@ -27,6 +27,7 @@ class Game {
     this.context = this.canvas.getContext("2d");
     if (!this.centerCircle) this.centerCircle = new CircleCenter(FILL_STYLE); // 中心圆 circle
     const self = this;
+    this.audio = document.querySelector('#audio');
     this.mobileTouch = new MobileTouch(this.canvas, {tap: function (e) {
         self.tapHandle.call(self, e)
       }});
@@ -196,6 +197,9 @@ class Game {
     this.context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
   }
   tapHandle(e) { // 鼠标或触摸后出发的事件监听(在isCanTap为true时, 发射子弹)
+    if (this.audio){
+      this.audio.play();
+    }
     e.stopPropagation();
     e.preventDefault();
     if (this.isCanTap){

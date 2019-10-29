@@ -75,32 +75,6 @@ const request = getRequest();
            this.extractNumber --;
            off = !off;
            this.signMsg = md5Activity(this.params);
-
-           /** test start*/
-           // import('./prizeDialog').then(({Prize}) => {
-           //   const extractResult = document.querySelector('.result');
-           //   new Prize().mount(extractResult,name, vm.lang.prizeChunk);
-           //   extractResult.style.display = 'block';
-           // });
-           // extract(this.extractNumber);
-           // let  level = this.extractNumber;
-           // alert(level)
-           // // level = 4
-           // if (request.poolName === '02'){
-           //   if (level == 8){
-           //     this.$options.methods.thankHandle(level)
-           //   } else {
-           //     this.$options.methods.prizeHandle(level,100)
-           //   }
-           // } else {
-           //   if (level == 4 || level == 8){
-           //     this.$options.methods.thankHandle(level)
-           //   } else {
-           //     this.$options.methods.prizeHandle(level,100)
-           //   }
-           // }
-           // return;
-           /** test end*/
            activityApi(this.params, this.signMsg).then(res => {
              if (res.data.level){
                let level = res.data.level;
