@@ -1,5 +1,4 @@
 function validatePhone(rule, value, callback) {
-  console.log(value);
   if (!/^[0-9]{10}$/.test(value)) {
     callback({message :'Wrong format of mobile phone number'})
   } else {
@@ -7,7 +6,6 @@ function validatePhone(rule, value, callback) {
   }
 }
 function validateOTP(rule, value, callback) {
-  console.log(value);
   if (!/^[0-9]{4}$/.test(value)) {
     callback({message :'Wrong format of OTP number'})
   } else {

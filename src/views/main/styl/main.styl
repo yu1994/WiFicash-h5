@@ -1,24 +1,25 @@
 @import "../../../../src/common/styl/mixin.styl"
 #app
-  background-color #4F31AB
+  background-color #5360C6
   .bannerScope
     position relative
     width 100%
-    height 540px
+    height 611px
     $bg-image("../img/banner")
     background-repeat no-repeat
     background-size 100% 100%
     .logo
       position absolute
-      top 25px
-      right: 25px
+      top 124px
+      left 50%
+      margin-left (-(@top/2))px
       width 120px
       height 120px
       $bg-image("../img/icon_logo")
       background-size 100% 100%
     .slogan
       position absolute
-      top 407px
+      top 480px
       left 50%
       width:548px;
       height:60px;
@@ -32,6 +33,24 @@
       border-radius 10px
       text-shadow:0 3px 5px rgba(76,0,110,0.58);
       background:linear-gradient(#e66db1, #d33d6b);
+    .platformSlogan
+      display flex
+      position absolute
+      top 555px
+      left 0
+      width:100%;
+      align-items center
+      justify-content center
+      p
+        font-size:25px;
+        font-weight:normal;
+        color:rgba(255,220,84,1);
+        margin 0 10px
+      i
+        width 10px
+        height 10px
+        $bg-image("../img/icon_decorate")
+        background-size 100% 100%
   .wrapped
     padding 0 45px 92px 45px
     .aboutScope
